@@ -1,0 +1,43 @@
+Artificial Intelligence
+	characteristic:
+	- Robots
+	- Learning
+	- Dynamic behavior ==> responds to stimuli
+	- Heuristic
+Logic
+	- Symbol system hypothesis
+	==> Create a machine with reason
+	==> Plug in domain knowledge
+	- Consider alternatives and evaluate them
+    - Search algorithms
+
+Search algorithm
+    - Start at initial state
+    - Find possible actions, pick one then make it the intial one
+    - Keep on going till reach goal
+
+Heuristic search ==> Skip the dumb part
+    - To avoid loop in a domain-independent way, use HashSet
+    Example: tile puzzles ( slide tiles back and forth to archive the original unscrambled image)
+    
+    - Oracle: function that contains information unobtained by any means
+        - e(n) = g(n) + h(n)
+        estimated solution length = distance from root + oracular distance to goal
+        - time needed to run breath-first search with an oracle: 
+            O(c*h) in which: c = branching factor 
+        - e(n) = g(n) + h(n)
+        ==> g(n) can be found
+        ==> h(n) cannot 
+        ===> e(n) = g(n) + h'(n) --- h'(n) = number of titles out of place - a heuristic estimate
+                --->> relaxation of the problem
+    Back to the puzzle example: 
+    - h'(n) = Sum of ( Manhattan distances to goal ) for each tile  
+
+    - Monotonic property:
+    ==> Precessor node n1, and its successor n2
+        - if h'(goal) = 0 && h'(n1)-h'(n2) <= 1 ---> it's monotonic
+        - Cons of overestimate h':
+            - Got to goal later
+            - Never reach goal 
+    
+     
